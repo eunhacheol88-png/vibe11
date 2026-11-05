@@ -1,0 +1,98 @@
+/* 화성시미디어센터 · AI와 함께 만드는 스마트 웹서비스 — 강좌 전용 테마
+   common.css 다음에 링크합니다. 색과 모양만 바꾸고 구조·동작은 그대로 둡니다.
+   팔레트: 숲색(모임의 안정감) · 코랄(퇴근 후의 활기) · 앰버(저녁 불빛) · 크림 */
+:root{
+  --forest:#1E3A34; --forest-2:#3A5A52; --coral:#E8613C; --coral-soft:#FDE9E1;
+  --amber:#F2A541; --amber-soft:#FFF3DF; --mint:#2E8B7A; --mint-soft:#E3F2EE;
+  --navy:var(--forest); --navy-2:var(--forest-2); --terra:var(--coral); --teal:var(--mint); --gold:var(--amber);
+  --ink:#2B2622; --muted:#7C6B5D; --line:#EADFD2; --cream:#FBF6EF; --cream-2:#F6EEE3; --paper:#FFFFFF;
+  --shadow:0 14px 34px rgba(30,58,52,.12);
+}
+body{background:var(--cream) radial-gradient(rgba(30,58,52,.05) 1px,transparent 1.4px) 0 0/22px 22px;}
+body::after{display:none;}
+section{border-bottom:1px solid var(--line);}
+
+/* 상단 바: 밝은 크림 + 숲색 선 */
+nav{background:rgba(255,253,249,.94);border-bottom:2px solid var(--forest);}
+.brand{color:var(--forest);font-weight:800;}
+.brand .dot{background:var(--coral);box-shadow:0 0 0 4px rgba(232,97,60,.18);}
+.nav-links a{animation:none;background:#fff;color:var(--coral);border:2px solid var(--coral);border-radius:50%;box-shadow:none;font-weight:800;}
+.nav-links a:hover{background:var(--coral);color:#fff;transform:translateY(-1px);}
+
+/* 첫 화면: 짙은 숲색 띠 */
+.hero{background:var(--forest);border-bottom:0;color:#F6EEE3;}
+.hero::before{background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 14px,transparent 14px 28px);inset:0;}
+.stamp-badge{background:var(--coral);border:0;color:#fff;letter-spacing:.04em;text-transform:none;font-weight:700;}
+.hero h1{color:#FFF7EC;font-weight:800;}
+.hero h1 .hl{background:linear-gradient(100deg,var(--amber),#FFC978 55%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.sub{color:#E9DFD2;}
+.hero p.sub b{color:#FFD9A0;}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#F6EEE3;box-shadow:none;border-radius:12px;}
+.chip b{color:var(--amber);}
+
+/* 섹션 제목 */
+.eyebrow{color:var(--coral);letter-spacing:.12em;font-weight:800;}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--coral);}
+h2.sec{color:var(--forest);font-weight:800;position:relative;padding-bottom:12px;}
+h2.sec::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:4px;border-radius:2px;background:var(--amber);}
+.lead{color:var(--muted);}
+
+/* 카드 */
+.card{border-radius:16px;border:1px solid var(--line);border-top:4px solid var(--coral);box-shadow:0 6px 18px rgba(30,58,52,.06);}
+.card:nth-child(3n+2){border-top-color:var(--mint);}
+.card:nth-child(3n){border-top-color:var(--amber);}
+.why-box{background:var(--forest);border-radius:18px;}
+.why-box h3{color:var(--amber);}
+.pill{background:rgba(255,255,255,.1);color:#F6EEE3;border:1px solid rgba(255,255,255,.25);}
+
+/* 흐름 */
+.flow .step{border-radius:14px;}
+.flow .step .n{background:var(--coral);}
+.flow .arr{color:var(--amber);}
+
+/* 실습 카드 */
+.stepcard,.stepcard[id^="step"]{animation:none;border-radius:18px;border:1px solid var(--line);border-left:6px solid var(--forest);box-shadow:0 6px 18px rgba(30,58,52,.06);}
+.stepcard[id^="step"]:hover{box-shadow:0 10px 26px rgba(30,58,52,.10);}
+.stepcard .num{background:var(--coral);border-radius:50%;box-shadow:0 5px 14px rgba(232,97,60,.3);}
+.stepcard .goal{background:var(--mint-soft);color:var(--mint);border-color:rgba(46,139,122,.3);}
+.stepcard .note{background:#fff;border-left-color:var(--mint);}
+.stepcard p.why{border-left-color:var(--amber);background:var(--amber-soft);}
+#hands .stepcard.collapsible .head:hover h3{color:var(--coral);}
+#hands .stepcard .chev{color:var(--coral);}
+#hands .stepcard .donebtn:hover{border-color:var(--mint);color:var(--mint);}
+#hands .stepcard.done .donebtn{background:var(--mint);border-color:var(--mint);color:#fff;}
+#hands .stepcard.done .num{background:var(--mint);}
+.tool-tag.gemini,.tool-tag.canvas{background:var(--amber-soft);color:#9A5B05;border-color:#F4D29C;}
+
+/* 프롬프트 상자 */
+.prompt-box{background:#FFF8F1;border:1.5px solid #F3C9AE;box-shadow:0 6px 18px rgba(232,97,60,.07);}
+.prompt-box .gh .gi{background:var(--coral);box-shadow:0 5px 14px rgba(232,97,60,.3);}
+pre{background:#1F2A28 !important;}
+pre .metakey{color:var(--amber);}
+.shortp{border-color:#F3C9AE;}
+
+/* 버튼 */
+.cta-btn{background:var(--forest);}
+.cta-btn:hover{background:var(--forest-2);}
+.cta-btn.teal{background:var(--mint);}
+.cta-btn.pad{background:var(--coral);}
+.cta-btn.ghost:hover{border-color:var(--coral);color:var(--coral);}
+.revlaunch .go{background:var(--coral);}
+details.tip summary::before,.more>summary::before,.sharebox>summary::before{color:var(--coral);}
+
+/* 선택 미션 빌더 */
+.bp-chip:hover{border-color:var(--coral);color:var(--coral);}
+.bp-chip[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#fff;}
+.bp-tab:hover{border-color:var(--mint);color:var(--mint);}
+.bp-tab[aria-selected="true"]{background:var(--forest);border-color:var(--forest);}
+.bp-free{border-color:var(--line);}
+.bp-free:focus{box-shadow:0 0 0 3px rgba(232,97,60,.16);}
+.bp-out pre .pk{color:#FFB08F;}
+
+/* 마무리 */
+.closing{background:linear-gradient(120deg,var(--forest),var(--mint));box-shadow:0 14px 34px rgba(30,58,52,.22);}
+.ach{background:rgba(255,255,255,.12);}
+
+/* 결과 화면 예시 */
+.resultshot img{border-radius:14px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(30,58,52,.14);max-width:520px;max-height:none;}
+footer{color:var(--muted);}
