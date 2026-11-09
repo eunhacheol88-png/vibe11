@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 모임 웹앱 | 나만의 웹앱 기획하기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#252a30;font-family:Pretendard,"Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.65}button,input,select,textarea{font:inherit}.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e2da;padding:12px max(20px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:850;font-size:18px;color:#283e47}.muted{color:#68757c}.wrap{max-width:1180px;margin:auto;padding:24px 20px 60px}.hero{background:#263f48;color:white;border-radius:22px;padding:30px 34px;margin-bottom:22px}.hero h1{margin:4px 0 8px;font-size:clamp(24px,3vw,35px)}.hero p{margin:0;color:#e1e8e8}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:22px}.side{background:white;border:1px solid #e8e4dc;border-radius:16px;padding:14px;align-self:start;position:sticky;top:72px}.navbtn{display:block;width:100%;text-align:left;background:transparent;border:0;border-radius:10px;padding:11px 12px;cursor:pointer;color:#41525b}.navbtn.active{background:#e8f1ee;color:#175e56;font-weight:750}.content{min-width:0}.panel{display:none}.panel.active{display:block}.card{background:#fff;border:1px solid #e8e4dc;border-radius:18px;padding:25px;margin-bottom:18px;box-shadow:0 2px 9px #1a262509}.card h2{margin:0 0 8px;font-size:24px}.card h3{font-size:19px;margin:18px 0 7px}.eyebrow{font-size:12px;letter-spacing:.08em;font-weight:800;color:#287b71}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.btn{border:1px solid #d4dcd9;border-radius:10px;padding:10px 15px;background:#fff;color:#25414a;cursor:pointer;font-weight:700}.btn.primary{background:#276e65;color:white;border-color:#276e65}.btn:hover{filter:brightness(.96)}.prompt{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7f5;border:1px solid #dfeae5;border-radius:12px;padding:19px;font-size:14px;max-height:440px;overflow:auto}.callout{background:#f1f7f4;border-left:4px solid #4b9b87;padding:14px 18px;border-radius:9px;margin:14px 0}.warning{background:#fff7e9;border-left-color:#c38b38}.checkline{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid #eee}.checkline input{width:19px;height:19px;accent-color:#276e65}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mini{border:1px solid #e2e8e4;border-radius:12px;padding:15px;background:#fcfdfc}.mini strong{display:block;color:#245f59}.note{background:#fff8e9;border:1px solid #eed9a9;padding:17px;border-radius:12px;margin-top:18px}.stepnum{display:inline-block;background:#e5f1ed;border-radius:20px;padding:3px 10px;color:#1d655d;font-size:12px;font-weight:800}.footer{margin-top:22px;color:#7a8588;font-size:12px}.choice{width:100%;padding:10px;background:#fff;border:1px solid #dbe4e0;border-radius:10px}.field{margin:12px 0}.field label{display:block;font-weight:750;margin-bottom:5px}.field textarea{width:100%;border:1px solid #dbe4e0;border-radius:10px;padding:10px;min-height:60px}.hidden{display:none!important}@media(max-width:800px){.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:5px}.navbtn{min-width:145px;font-size:13px}.wrap{padding:12px}.hero{padding:22px}.card{padding:18px}.grid{grid-template-columns:1fr}.top{padding:10px 15px}}@media print{.top,.side,.actions{display:none!important}.layout{display:block}.panel{display:block!important;break-before:page}.prompt{max-height:none}.card{box-shadow:none}}
+body{word-break:keep-all;overflow-wrap:break-word}.prompt{word-break:normal}
+.single{max-width:900px;margin:0 auto}
+.field input[type=text]{width:100%;padding:10px;background:#fff;border:1px solid #dbe4e0;border-radius:10px}
+.next{display:grid;gap:10px;margin-top:10px}.next .mini{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.next .mini span{font-size:14px}.next .btn{white-space:nowrap;padding:7px 12px}
+</style></head>
+<body>
+<header class="top"><div class="brand">우리 모임 웹앱 · 개별 미션</div><a class="btn" href="https://eunhacheol88-png.github.io/vibe11/vibe05.html" target="_blank" rel="noopener" style="text-decoration:none">← 1차시 교안</a></header>
+<main class="wrap"><div class="single">
+<div class="hero"><div style="font-size:13px;opacity:.8">PERSONAL MISSION</div><h1>나만의 웹앱 기획하기</h1><p>1차시 기획을 업그레이드해서 내 관심사로 한 번 더</p></div>
+
+<div class="card"><div class="eyebrow">MAKE YOUR OWN · UPGRADE</div><h2>선택해서 나만의 웹앱 기획하기</h2>
+<p>1차시에 했던 기획을 한 단계 올려 봅니다. 항목을 고르고 하고 싶은 말을 적으면 제작 요청문이 자동으로 완성됩니다.</p>
+<div class="grid">
+<div class="field"><label>서비스 주제</label><select class="choice" id="kind"><option>오늘의 컨디션 체크</option><option>취미 모임 일정 도우미</option><option>간단한 가계부</option><option>나만의 독서 기록장</option><option>여행 준비 체크리스트</option><option>나의 정리 유형 테스트</option><option>상품 등록 준비 체크</option><option>나의 여행 스타일 테스트</option><option>아이와 함께하는 구구단 퀴즈</option><option>강의 일정 관리</option><option>직접 입력</option></select></div>
+<div class="field" id="kindFreeWrap" style="display:none"><label>주제 직접 입력</label><input type="text" id="kindFree" placeholder="예: 우리 동네 산책 코스 추천"></div>
+<div class="field"><label>사용 대상</label><select class="choice" id="audience"><option>직장인</option><option>대학생</option><option>성인 누구나</option><option>동호회 회원</option><option>강의 수강생</option><option>고객</option><option>아이와 부모</option></select></div>
+<div class="field"><label>디자인</label><select class="choice" id="design"><option>차분한 베이지와 아이보리</option><option>시원한 파랑과 흰색</option><option>산뜻한 초록과 크림색</option><option>세련된 차콜과 밝은 회색</option><option>밝고 귀여운 파스텔</option></select></div>
+<div class="field"><label>중요 기능</label><select class="choice" id="feature"><option>질문 5개와 선택지 3개 (결과 유형 보여 주기)</option><option>퀴즈와 점수 (정답 맞히기)</option><option>목록 등록과 수정·삭제</option><option>일정 입력과 확인</option><option>기록 작성과 목록 보기</option></select></div>
+<div class="field"><label>그림</label><select class="choice" id="pic"><option>그림 없이</option><option>주제에 어울리는 SVG 그림 넣기</option></select></div>
+</div>
+<div class="field"><label>이 앱을 만들고 싶은 이유 (선택)</label><textarea id="why" placeholder="예: 강의 첫 시간에 수강생이 자기 정리 습관을 재미있게 알아보면 좋겠어요"></textarea></div>
+<div class="field"><label>꼭 넣고 싶은 내용 (선택)</label><textarea id="detail" placeholder="예: 큰 글씨, 첫 화면에 소개 문구, 결과마다 팁 2개"></textarea></div>
+<div class="actions"><button class="btn primary" onclick="copyId('customText')">📋 내 제작 프롬프트 복사</button></div>
+<div class="prompt" id="customText"></div>
+<div class="callout">완성된 요청문을 제미나이 <b>새 채팅</b>(Canvas 켜기)에 붙여넣으세요. 처음에는 기본 화면과 핵심 기능만 만들고, 눌러서 확인한 다음 아래처럼 하나씩 요청합니다.</div>
+</div>
+
+<div class="card"><div class="eyebrow">NEXT</div><h2>그다음에는 이렇게 요청해요</h2>
+<div class="next">
+<div class="mini"><span><strong>기능 하나 더하기</strong>[추가할 기능]을 추가해 주세요. 기존 기능과 디자인은 유지해 주세요.</span><button class="btn" onclick="copyRaw('[추가할 기능]을 추가해 주세요. 기존 기능과 디자인은 유지해 주세요. 수정 후 제가 직접 확인할 항목을 알려 주세요.')">복사</button></div>
+<div class="mini"><span><strong>오류 고치기</strong>오류 상황과 원래 원하는 동작을 적어서 보내요.</span><button class="btn" onclick="copyRaw('오류 상황: [발생한 문제]\n기대하는 정상 동작: [원하는 동작]\n오류와 관련된 부분만 최소한으로 고쳐 주세요. 기존 기능과 디자인은 유지하고, 처음부터 다시 만들지 마세요.')">복사</button></div>
+<div class="mini"><span><strong>디자인 다듬기</strong>기능은 그대로 두고 보기 좋게 정리해요.</span><button class="btn" onclick="copyRaw('기능은 바꾸지 말고 글씨와 버튼 크기를 통일하고, 휴대폰에서도 보기 좋게 정리해 주세요.')">복사</button></div>
+</div>
+<div class="callout warning">실명·연락처 같은 개인정보 대신 연습용 내용으로 만들어 보세요. 완성하면 내보내기로 HTML 파일을 저장해 두세요.</div>
+</div>
+
+<div class="card"><div class="eyebrow">FOR EXPERIENCED</div><h2>내 작품을 직접 설계하고 싶다면</h2>
+<p>이미 아이디어가 분명하거나 개발 경험이 있다면, 위 선택 대신 AI와 기획부터 함께해 보세요.</p>
+<div class="field"><label>만들고 싶은 작품 (한두 문장)</label><textarea id="own" placeholder="예: 쇼핑몰 상품 정보를 입력하면 판매가와 마진을 계산하고 목록으로 관리하는 도구"></textarea></div>
+<div class="actions"><button class="btn primary" onclick="copyId('ownText')">📋 설계 프롬프트 복사</button></div>
+<div class="prompt" id="ownText"></div>
+</div>
+
+<div class="footer">학습용 HTML 교안</div></div></main>
+<div id="toast" style="display:none;position:fixed;bottom:22px;right:22px;background:#253f46;color:white;padding:12px 20px;border-radius:10px;z-index:20"></div>
+<script>
+const $=id=>document.getElementById(id);
+function toast(t){const x=$('toast');x.textContent=t;x.style.display='block';clearTimeout(window.__t);window.__t=setTimeout(()=>x.style.display='none',1500)}
+function copyRaw(t){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(()=>toast('복사했어요')).catch(()=>fb(t))}else fb(t)}
+function fb(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('복사했어요')}catch(e){toast('직접 선택해 복사하세요')}a.remove()}
+function copyId(id){copyRaw($(id).textContent)}
+function make(){
+ const free=$('kind').value==='직접 입력';$('kindFreeWrap').style.display=free?'block':'none';
+ const kind=free?($('kindFree').value.trim()||'[주제]'):$('kind').value;
+ const why=$('why').value.trim(),detail=$('detail').value.trim(),pic=$('pic').value.indexOf('SVG')>=0;
+ $('customText').textContent="제미나이 캔버스에서 '"+kind+"' 웹앱을 만들고 싶습니다.\n사용 대상: "+$('audience').value+"\n디자인: "+$('design').value+"\n우선 구현할 기능: "+$('feature').value+"\n"+(why?"만들고 싶은 이유: "+why+"\n":"")+"추가 요청: "+(detail||'없음')+"\n"+(pic?"첫 화면에 주제에 어울리는 단순한 그림을 SVG 코드로 직접 그려 주세요. 외부 이미지 주소는 쓰지 마세요.\n":"")+"\nHTML, CSS, JavaScript를 하나의 HTML 파일에 작성하고 스마트폰에도 대응해 주세요. 외부 API, 데이터베이스, 로그인은 사용하지 마세요. 먼저 기본 화면과 핵심 입력 기능만 구현해 주세요. 점수 계산이나 저장 등 후속 기능은 제가 확인한 다음 단계별로 요청하겠습니다. 숫자를 입력받는다면 요청하지 않은 단위 제한(예: 1000 단위)은 넣지 마세요. 완성 후 제가 직접 눌러 확인할 항목을 알려 주세요.";
+ const own=$('own').value.trim()||'[만들고 싶은 작품]';
+ $('ownText').textContent="내가 만들고 싶은 작품: "+own+"\n\n당신은 웹앱 기획 전문가입니다. 아직 코드를 만들지 말고 기획부터 함께해 주세요.\n1. 부족한 정보는 한 번에 하나씩 질문해 주세요.\n2. 사용자, 해결할 문제, 핵심 기능(우선순위), 다룰 데이터, 화면 구성을 정리한 기획서를 써 주세요.\n3. 한 단계에 기능 하나씩 들어가는 제미나이 캔버스용 단계별 제작 프롬프트를 써 주세요.\n4. 단계마다 제가 직접 확인할 테스트 항목도 적어 주세요.\n5. 개인정보, 비밀 키 노출, 다른 사람이 데이터를 고칠 수 있는 문제처럼 주의할 점도 알려 주세요."}
+document.addEventListener('DOMContentLoaded',()=>{['kind','kindFree','audience','design','feature','pic','why','detail','own'].forEach(id=>{$(id).addEventListener('input',make);$(id).addEventListener('change',make)});make()});
+</script></body></html>
