@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 모임 웹앱 | 개별 미션 · 내 분야로 응용하기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#252a30;font-family:Pretendard,"Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.65}button,input,select,textarea{font:inherit}.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e2da;padding:12px max(20px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:850;font-size:18px;color:#283e47}.muted{color:#68757c}.wrap{max-width:1180px;margin:auto;padding:24px 20px 60px}.hero{background:#263f48;color:white;border-radius:22px;padding:30px 34px;margin-bottom:22px}.hero h1{margin:4px 0 8px;font-size:clamp(24px,3vw,35px)}.hero p{margin:0;color:#e1e8e8}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:22px}.side{background:white;border:1px solid #e8e4dc;border-radius:16px;padding:14px;align-self:start;position:sticky;top:72px}.navbtn{display:block;width:100%;text-align:left;background:transparent;border:0;border-radius:10px;padding:11px 12px;cursor:pointer;color:#41525b}.navbtn.active{background:#e8f1ee;color:#175e56;font-weight:750}.content{min-width:0}.panel{display:none}.panel.active{display:block}.card{background:#fff;border:1px solid #e8e4dc;border-radius:18px;padding:25px;margin-bottom:18px;box-shadow:0 2px 9px #1a262509}.card h2{margin:0 0 8px;font-size:24px}.card h3{font-size:19px;margin:18px 0 7px}.eyebrow{font-size:12px;letter-spacing:.08em;font-weight:800;color:#287b71}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.btn{border:1px solid #d4dcd9;border-radius:10px;padding:10px 15px;background:#fff;color:#25414a;cursor:pointer;font-weight:700}.btn.primary{background:#276e65;color:white;border-color:#276e65}.btn:hover{filter:brightness(.96)}.prompt{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7f5;border:1px solid #dfeae5;border-radius:12px;padding:19px;font-size:14px;max-height:440px;overflow:auto}.callout{background:#f1f7f4;border-left:4px solid #4b9b87;padding:14px 18px;border-radius:9px;margin:14px 0}.warning{background:#fff7e9;border-left-color:#c38b38}.checkline{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid #eee}.checkline input{width:19px;height:19px;accent-color:#276e65}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mini{border:1px solid #e2e8e4;border-radius:12px;padding:15px;background:#fcfdfc}.mini strong{display:block;color:#245f59}.note{background:#fff8e9;border:1px solid #eed9a9;padding:17px;border-radius:12px;margin-top:18px}.stepnum{display:inline-block;background:#e5f1ed;border-radius:20px;padding:3px 10px;color:#1d655d;font-size:12px;font-weight:800}.footer{margin-top:22px;color:#7a8588;font-size:12px}.choice{width:100%;padding:10px;background:#fff;border:1px solid #dbe4e0;border-radius:10px}.field{margin:12px 0}.field label{display:block;font-weight:750;margin-bottom:5px}.field textarea{width:100%;border:1px solid #dbe4e0;border-radius:10px;padding:10px;min-height:60px}.hidden{display:none!important}@media(max-width:800px){.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:5px}.navbtn{min-width:145px;font-size:13px}.wrap{padding:12px}.hero{padding:22px}.card{padding:18px}.grid{grid-template-columns:1fr}.top{padding:10px 15px}}@media print{.top,.side,.actions{display:none!important}.layout{display:block}.panel{display:block!important;break-before:page}.prompt{max-height:none}.card{box-shadow:none}}
+body{word-break:keep-all;overflow-wrap:break-word}.prompt{word-break:normal}
+.toplinks{display:flex;gap:8px;flex-wrap:wrap}.toplinks a{text-decoration:none}
+.btn.link{background:#fff8e9;border-color:#eed9a9;color:#7a5410}
+.navgroup{font-size:11px;font-weight:800;letter-spacing:.08em;color:#8a9599;margin:12px 12px 4px}
+.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.track{border:2px solid #dfeae5;border-radius:14px;padding:16px;background:#fcfdfc;cursor:pointer;text-align:left}
+.track:hover{border-color:#276e65}.track b{display:block;font-size:17px;color:#245f59;margin-bottom:4px}.track span{font-size:14px;color:#68757c}
+.track em{font-style:normal;display:inline-block;font-size:12px;font-weight:800;background:#e5f1ed;color:#1d655d;border-radius:20px;padding:2px 10px;margin-bottom:8px}
+.stage{border:1px solid #e2e8e4;border-radius:14px;padding:16px 18px;margin-top:14px;background:#fff}
+.stage>h3{margin:0 0 6px;font-size:17px;display:flex;gap:8px;align-items:center}
+.stage>h3 .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#276e65;color:#fff;font-size:13px}
+.field input[type=text],.field select{width:100%;padding:10px;background:#fff;border:1px solid #dbe4e0;border-radius:10px}
+.hint{font-size:13px;color:#7a8588;margin-top:4px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.tab{border:1px solid #d4dcd9;background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;font-weight:700;color:#41525b;font-size:14px}
+.tab.on{background:#276e65;color:#fff;border-color:#276e65}
+.prompt .k{background:#fff1c9;border-radius:4px;padding:0 3px}
+.frow{display:grid;grid-template-columns:28px minmax(0,1fr) 90px 120px 32px;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f0ec}
+.frow input[type=text],.frow select{padding:7px 9px;border:1px solid #dbe4e0;border-radius:8px;width:100%}
+.frow label{font-size:13px;display:flex;align-items:center;gap:4px}
+.frow .del{border:0;background:none;color:#b0473a;cursor:pointer;font-size:16px}
+.frow.head{font-size:12px;color:#7a8588;font-weight:800;border-bottom:1px solid #e2e8e4}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}.tbl th,.tbl td{border:1px solid #e2e8e4;padding:8px 10px;text-align:left;vertical-align:top}.tbl th{background:#f1f7f4;color:#245f59}
+details.example{margin-top:10px;border:1px dashed #cfdcd7;border-radius:12px;padding:10px 14px;background:#fcfdfc}
+details.example summary{cursor:pointer;font-weight:750;color:#276e65}
+@media(max-width:800px){.tracks{grid-template-columns:1fr}.frow{grid-template-columns:24px 1fr 70px;}.frow .ty,.frow .del{grid-column:auto}.navgroup{display:none}}
+</style></head>
+<body>
+<header class="top"><div class="brand">우리 모임 웹앱 · 개별 미션</div>
+<div class="toplinks"><a class="btn" href="https://eunhacheol88-png.github.io/vibe11/vibe05.html" target="_blank" rel="noopener">← 1차시 교안</a><a class="btn" href="lesson2.html">← 2차시 실습</a></div></header>
+<main class="wrap">
+<div class="hero"><div style="font-size:13px;opacity:.8">PERSONAL MISSION · 1~2차시 응용</div><h1>내 분야로 한 번 더 만들어 보기</h1><p>고르고 채우기 · AI와 대화로 기획 · 내 작품 설계 — 나에게 맞는 방법으로</p></div>
+<div class="layout"><nav class="side" aria-label="개별 미션 목차"><button class="navbtn" data-go="start" onclick="show('start')">시작 · 방법 고르기</button><div class="navgroup">고르고 채우기</div><button class="navbtn" data-go="m1" onclick="show('m1')">미션 1 · 진단·퀴즈</button><button class="navbtn" data-go="m2" onclick="show('m2')">미션 2 · 소개 + 목록</button><div class="navgroup">스스로 설계</div><button class="navbtn" data-go="meta" onclick="show('meta')">메타 · 역프롬프트</button><button class="navbtn" data-go="dev" onclick="show('dev')">개발자 · 내 작품 설계</button><div class="navgroup">마무리</div><button class="navbtn" data-go="finish" onclick="show('finish')">교차검증과 공유</button></nav>
+<div class="content">
+<section class="panel" id="p-start"><div class="card"><div class="eyebrow">PERSONAL MISSION</div><h2>공통 미션을 내 분야로 한 번 더</h2>
+<p>1·2차시에 함께 만든 <b>우리 모임 운영 서비스</b>의 구조를 그대로 빌려, 내 일이나 관심사에 맞는 웹앱을 만들어 봅니다. 기술은 이미 배웠어요. 바뀌는 건 <b>주제와 내용</b>입니다.</p>
+<div class="grid">
+<div class="mini"><strong>미션 1 · 1차시 응용</strong>질문 → 점수 → 결과 구조로 <b>내 분야 진단·퀴즈</b> 만들기<br><span class="muted">예: 정리 유형 진단, 상품 등록 준비도 진단, 아이 구구단 퀴즈</span></div>
+<div class="mini"><strong>미션 2 · 2차시 응용</strong>소개 + 목록 등록·수정·삭제·저장 구조로 <b>내 분야 관리 앱</b> 만들기<br><span class="muted">예: 강의 일정 관리, 상품 등록 일정, 추천 장소 목록</span></div>
+</div>
+<h3>나에게 맞는 방법 고르기</h3>
+<div class="tracks">
+<button class="track" onclick="show('m1')"><em>처음이라면</em><b>고르고 채우기</b><span>항목을 고르고 빈칸을 채우면 단계별 프롬프트가 완성돼요. 미션 1부터 시작하세요.</span></button>
+<button class="track" onclick="show('meta')"><em>아이디어가 있다면</em><b>AI와 대화로 기획</b><span>메타프롬프트로 AI가 질문하게 하고, 역프롬프트로 참고 화면을 분석해요.</span></button>
+<button class="track" onclick="show('dev')"><em>개발 경험이 있다면</em><b>내 작품 설계</b><span>기획서 → 구현 계획 → 코드 리뷰 순서로 나만의 작품을 프롬프트로 설계해요.</span></button>
+</div>
+<h3>시작 전 약속</h3>
+<label class="checkline"><input type="checkbox" data-check="start-0" onchange="mark(this)"> 공통 앱과 섞이지 않게 <b>새 채팅</b>에서 진행한다 (같은 앱에서 하면 저장된 일정 데이터가 섞일 수 있어요)</label>
+<label class="checkline"><input type="checkbox" data-check="start-1" onchange="mark(this)"> 실명·연락처·아이 이름 같은 개인정보 대신 <b>연습용 내용</b>을 쓴다</label>
+<label class="checkline"><input type="checkbox" data-check="start-2" onchange="mark(this)"> 한 번에 다 만들지 않고 <b>한 단계씩</b> 만들고 눌러 본다</label>
+<h3>분야별 결과 예시</h3>
+<table class="tbl"><tr><th>관심 분야</th><th>미션 1 (진단·퀴즈)</th><th>미션 2 (소개 + 목록 관리)</th></tr>
+<tr><td>상품 등록·온라인 판매</td><td>상품 등록 준비도 진단</td><td>상품 소개 + 등록 일정 관리</td></tr>
+<tr><td>정리수납 강의</td><td>나의 정리 유형 테스트</td><td>강사 소개 + 교육 일정 관리</td></tr>
+<tr><td>장소·여행 안내</td><td>나의 여행 스타일 테스트</td><td>추천 장소 소개 + 방문 목록 관리</td></tr>
+<tr><td>교육·강의 운영</td><td>학습 스타일 진단</td><td>프로그램 소개 + 수업 일정 관리</td></tr>
+<tr><td>아이와 함께 배우기</td><td>구구단·낱말 퀴즈</td><td>퀴즈 문제 등록·관리</td></tr>
+<tr><td>취미 소모임</td><td>취미 성향 테스트</td><td>소모임 소개 + 활동 일정 관리</td></tr></table>
+<div class="actions"><button class="btn primary" onclick="show('m1')">미션 1 시작 →</button><button class="btn" onclick="show('m2')">미션 2로 바로 가기</button></div>
+</div></section>
+
+<section class="panel" id="p-m1"><div class="card"><span class="stepnum">미션 1 · 1차시 응용</span><h2>내 분야 진단·퀴즈 만들기</h2>
+<p class="muted">성향 테스트(질문 5개 → 보기별 점수 → 결과 유형)와 같은 구조로 만듭니다. 고르고 채우면 아래 단계별 프롬프트가 바뀌어요. 노란 글씨가 내가 고르거나 쓴 내용이에요.</p>
+
+<div class="stage"><h3><span class="n">1</span>내 말로 먼저 적기</h3>
+<div class="field"><label>누가, 어떤 상황에서 쓰면 좋겠나요? 무엇을 알게 되면 좋겠나요?</label><textarea id="m1-mine" data-save="m1-mine" placeholder="예: 정리수납 강의 첫 시간에 수강생이 자기 정리 습관을 재미있게 알아보면 좋겠어요"></textarea></div></div>
+
+<div class="stage"><h3><span class="n">2</span>고르고 채우기</h3>
+<div class="grid">
+<div class="field"><label>관심 분야</label><select id="m1-field"></select></div>
+<div class="field"><label>만들 것</label><select id="m1-type"><option value="diag">진단·성향 테스트 (정답 없음, 유형 결과)</option><option value="quiz">퀴즈 (정답 있음, 점수 결과)</option></select></div>
+<div class="field"><label>앱 이름</label><input type="text" id="m1-name"></div>
+<div class="field"><label>사용 대상</label><select id="m1-who"><option>성인 누구나</option><option>직장인</option><option>강의 수강생</option><option>고객</option><option>초등학생 아이와 부모</option></select></div>
+<div class="field"><label>질문 개수</label><select id="m1-qn"><option>5</option><option>3</option><option>7</option></select></div>
+<div class="field"><label>디자인 분위기</label><select id="m1-look"><option>차분한 베이지와 아이보리</option><option>시원한 파랑과 흰색</option><option>산뜻한 초록과 크림색</option><option>밝고 귀여운 파스텔</option><option>세련된 차콜과 밝은 회색</option></select></div>
+</div>
+<div class="field"><label>질문 주제 (쉼표로 구분)</label><input type="text" id="m1-topics"><div class="hint">질문 개수만큼 쓰면 좋아요. 모자라면 AI가 채웁니다.</div></div>
+<div class="field" id="m1-types-wrap"><label>결과 3가지 (슬래시로 구분)</label><input type="text" id="m1-types"><div class="hint" id="m1-types-hint">진단: 1번 보기→첫째 유형, 2번→둘째, 3번→셋째로 점수가 들어가요.</div></div>
+<div class="field"><label>대표 그림</label><select id="m1-pic"><option value="svg">SVG로 분위기 그림 그리기</option><option value="none">그림 없이</option></select></div>
+</div>
+
+<div class="stage"><h3><span class="n">3</span>단계별 프롬프트 · 새 채팅에서 차례로</h3>
+<div class="tabs" data-tabs="m1"><button class="tab on" data-t="1">1 화면과 질문</button><button class="tab" data-t="2">2 점수 계산</button><button class="tab" data-t="3">3 결과 화면</button><button class="tab" data-t="4">4 다듬기·저장</button></div>
+<div class="actions"><button class="btn primary" onclick="copyOut('m1-out')">📋 이 단계 프롬프트 복사</button></div>
+<div class="prompt" id="m1-out"></div>
+<div class="callout">한 단계를 보내고 직접 눌러 확인한 뒤 다음 단계 탭을 여세요. 문제가 생기면 Canvas 위쪽 되돌리기(↶)나 오류 해결 프롬프트를 쓰세요.</div></div>
+
+<div class="stage"><h3><span class="n">4</span>직접 확인하기</h3>
+<label class="checkline"><input type="checkbox" data-check="m1-0" onchange="mark(this)"> 질문이 하나씩 넘어가고, 이전 질문으로 돌아가 답을 바꿀 수 있다</label>
+<label class="checkline"><input type="checkbox" data-check="m1-1" onchange="mark(this)"> 내가 정한 규칙대로 점수가 나온다 (진단: 모두 1번이면 첫째 유형 / 퀴즈: 다 맞히면 만점)</label>
+<label class="checkline"><input type="checkbox" data-check="m1-2" onchange="mark(this)"> 답을 바꾼 뒤에도 점수가 중복되지 않는다</label>
+<label class="checkline"><input type="checkbox" data-check="m1-3" onchange="mark(this)"> 다시 시작하면 답과 점수가 모두 지워진다</label>
+<label class="checkline"><input type="checkbox" data-check="m1-4" onchange="mark(this)"> 휴대폰 화면에서 버튼이 겹치지 않는다</label>
+</div>
+<div class="actions"><button class="btn primary" onclick="show('m2')">미션 2로 →</button></div>
+</div></section>
+
+<section class="panel" id="p-m2"><div class="card"><span class="stepnum">미션 2 · 2차시 응용</span><h2>내 분야 소개 + 목록 관리 앱 만들기</h2>
+<p class="muted">모임 소개 + 일정 등록·수정·삭제·저장 구조를 내 분야에 맞게 바꿉니다. 목록에 넣을 항목을 직접 정할 수 있어요.</p>
+
+<div class="stage"><h3><span class="n">1</span>내 말로 먼저 적기</h3>
+<div class="field"><label>무엇을 소개하고, 어떤 정보를 목록으로 관리하고 싶나요?</label><textarea id="m2-mine" data-save="m2-mine" placeholder="예: 내 정리수납 강의를 소개하고, 기관별 강의 일정을 등록해서 관리하고 싶어요"></textarea></div></div>
+
+<div class="stage"><h3><span class="n">2</span>고르고 채우기</h3>
+<div class="grid">
+<div class="field"><label>관심 분야</label><select id="m2-field"></select></div>
+<div class="field"><label>시작 방법</label><select id="m2-start"><option value="file">2차시 완성 파일을 새 채팅에 올려 바꾸기</option><option value="new">처음부터 새로 만들기</option></select></div>
+<div class="field"><label>소개할 이름</label><input type="text" id="m2-name"></div>
+<div class="field"><label>한 줄 소개</label><input type="text" id="m2-intro"></div>
+<div class="field"><label>목록 이름</label><input type="text" id="m2-list"></div>
+<div class="field"><label>저장 방식</label><select id="m2-save"><option value="shared">Canvas 데이터베이스 · 링크로 함께 보기</option><option value="private">Canvas 데이터베이스 · 쓰는 사람마다 따로</option><option value="none">저장 없이 (새로고침하면 사라짐)</option></select></div>
+<div class="field"><label>대표 이미지</label><select id="m2-pic"><option value="svg">SVG로 분위기 그림 그리기</option><option value="imgbb">imgbb 사진 주소로 내 사진 넣기</option><option value="none">이미지 없이</option></select></div>
+<div class="field"><label>디자인</label><select id="m2-look"><option value="keep">지금 앱 디자인 유지</option><option>차분한 베이지와 아이보리</option><option>시원한 파랑과 흰색</option><option>산뜻한 초록과 크림색</option><option>세련된 차콜과 밝은 회색</option></select></div>
+</div>
+<div class="field"><label>목록에 넣을 항목</label>
+<div class="frow head"><span>사용</span><span>항목 이름</span><span>필수</span><span class="ty">종류</span><span></span></div>
+<div id="m2-fields"></div>
+<div class="actions"><input type="text" id="m2-newf" placeholder="추가할 항목 이름" style="padding:9px;border:1px solid #dbe4e0;border-radius:10px;flex:1"><button class="btn" onclick="addField()">+ 항목 추가</button></div>
+<div class="hint">숫자 항목은 "0 이상 모든 정수"로 요청돼요. 2차시에 AI가 1000원 단위 제한을 몰래 넣었던 일을 막기 위해서예요.</div></div>
+</div>
+
+<div class="stage"><h3><span class="n">3</span>단계별 프롬프트</h3>
+<div class="tabs" data-tabs="m2"><button class="tab on" data-t="1">1 열기·소개</button><button class="tab" data-t="2">2 입력 폼·목록</button><button class="tab" data-t="3">3 수정·삭제</button><button class="tab" data-t="4">4 저장</button><button class="tab" data-t="5">5 안전·교차검증</button></div>
+<div class="actions"><button class="btn primary" onclick="copyOut('m2-out')">📋 이 단계 프롬프트 복사</button></div>
+<div class="prompt" id="m2-out"></div>
+<div class="callout warning" id="m2-savewarn">링크로 함께 보는 앱은 링크를 가진 누구나 데이터를 보고 고칠 수 있어요. 연습용 데이터만 넣으세요.</div></div>
+
+<div class="stage"><h3><span class="n">4</span>직접 확인하기</h3>
+<label class="checkline"><input type="checkbox" data-check="m2-0" onchange="mark(this)"> 소개 화면과 이미지가 보인다</label>
+<label class="checkline"><input type="checkbox" data-check="m2-1" onchange="mark(this)"> 필수 항목을 비우면 등록되지 않고 어느 칸인지 알려 준다</label>
+<label class="checkline"><input type="checkbox" data-check="m2-2" onchange="mark(this)"> 숫자 항목에 0과 끝자리가 어색한 값(예: 55002)이 들어가고 음수는 막힌다</label>
+<label class="checkline"><input type="checkbox" data-check="m2-3" onchange="mark(this)"> 똑같은 항목 두 개 중 하나만 수정·삭제된다</label>
+<label class="checkline"><input type="checkbox" data-check="m2-4" onchange="mark(this)"> (저장을 골랐다면) 새로고침해도 목록이 남는다</label>
+<label class="checkline"><input type="checkbox" data-check="m2-5" onchange="mark(this)"> 입력한 &lt;b&gt;시험&lt;/b&gt;이 글자 그대로 보인다</label>
+</div>
+</div></section>
+
+<section class="panel" id="p-meta"><div class="card"><span class="stepnum">AI와 대화로 기획</span><h2>메타프롬프트 · 역프롬프트</h2>
+<div class="stage"><h3><span class="n">A</span>메타프롬프트 · AI가 질문하게 하기</h3>
+<p class="muted">아이디어가 흐릿해도 괜찮아요. AI가 하나씩 물어보고 기획서와 단계별 프롬프트까지 만들어 줍니다.</p>
+<div class="grid"><div class="field"><label>내 직업 또는 관심 분야</label><input type="text" id="mt-field" placeholder="예: 정리수납 강사"></div>
+<div class="field"><label>바탕으로 삼을 공통 미션</label><select id="mt-base"><option value="1">1차시 · 질문 → 점수 → 결과</option><option value="2">2차시 · 소개 + 목록 관리 + 저장</option><option value="0">상관없이 새로</option></select></div></div>
+<div class="field"><label>지금 떠오르는 아이디어 (한 문장이라도)</label><textarea id="mt-idea" data-save="mt-idea" placeholder="예: 강의 끝나고 수강생이 집 정리 계획을 세울 수 있으면 좋겠다"></textarea></div>
+<div class="actions"><button class="btn primary" onclick="copyOut('mt-out')">📋 메타프롬프트 복사</button></div><div class="prompt" id="mt-out"></div></div>
+<div class="stage"><h3><span class="n">B</span>역프롬프트 · 참고 화면에서 거꾸로 뽑기</h3>
+<p class="muted">마음에 드는 웹사이트나 앱 화면을 캡처해 첨부하고 보내세요. 남의 로고·사진·문구를 베끼지 않고 구조와 디자인 원칙만 가져옵니다.</p>
+<div class="field"><label>내 분야에 어떻게 쓰고 싶나요?</label><input type="text" id="rv-use" placeholder="예: 이 화면 구성으로 내 강의 소개 페이지를 만들고 싶어요"></div>
+<div class="actions"><button class="btn primary" onclick="copyOut('rv-out')">📋 역프롬프트 복사</button></div><div class="prompt" id="rv-out"></div></div>
+</div></section>
+
+<section class="panel" id="p-dev"><div class="card"><span class="stepnum">개발 경험자 트랙</span><h2>내 작품을 프롬프트로 설계하기</h2>
+<p class="muted">코드를 바로 받지 않고 <b>기획서 → 구현 계획 → 단계 구현 → 코드 리뷰</b> 순서로 갑니다. 이미 Codex나 다른 도구를 쓰고 있다면, 여기서 만든 기획서를 그 도구에 그대로 넘겨도 돼요.</p>
+<div class="grid">
+<div class="field"><label>작품 이름</label><input type="text" id="dv-name" placeholder="예: 상품 등록 도우미"></div>
+<div class="field"><label>주 사용자</label><input type="text" id="dv-user" placeholder="예: 온라인 쇼핑몰 1인 판매자"></div>
+<div class="field"><label>실행 환경</label><select id="dv-env"><option>Gemini Canvas (HTML 파일 하나)</option><option>Gemini Canvas (React)</option><option>내 개발 환경 (Codex · VS Code 등)</option></select></div>
+<div class="field"><label>데이터 저장</label><select id="dv-db"><option>없음</option><option>Canvas가 제공하는 데이터베이스</option><option>브라우저 저장(localStorage)</option><option>외부 데이터베이스 (내가 직접 설정)</option></select></div>
+<div class="field"><label>외부 연동</label><select id="dv-api"><option>없음</option><option>키 없이 쓰는 공개 API</option><option>키가 필요한 API</option><option>파일 내보내기·가져오기 (CSV·엑셀)</option></select></div>
+<div class="field"><label>원하는 수준</label><select id="dv-level"><option>시연 가능한 시제품</option><option>내가 실제 업무에 쓸 도구</option><option>다른 사람에게 공개할 서비스</option></select></div>
+</div>
+<div class="field"><label>해결하려는 문제</label><textarea id="dv-problem" data-save="dv-problem" placeholder="예: 상품마다 상세 설명과 검색 태그를 쓰는 데 시간이 너무 오래 걸린다"></textarea></div>
+<div class="field"><label>핵심 기능 (한 줄에 하나)</label><textarea id="dv-feat" data-save="dv-feat" placeholder="상품 정보 입력&#10;판매가·마진 계산&#10;AI 문구 초안&#10;마켓 양식 엑셀 내보내기"></textarea></div>
+<div class="field"><label>다룰 데이터 항목</label><input type="text" id="dv-data" placeholder="예: 상품명, 매입가, 판매가, 수수료율, 카테고리, 태그"></div>
+<div class="field"><label>완료 기준 (이렇게 되면 성공)</label><input type="text" id="dv-done" placeholder="예: 상품 10개를 입력하고 엑셀로 내려받아 마켓에 올릴 수 있다"></div>
+<div class="tabs" data-tabs="dv"><button class="tab on" data-t="1">1 기획서</button><button class="tab" data-t="2">2 구현 계획</button><button class="tab" data-t="3">3 단계 구현 요청</button><button class="tab" data-t="4">4 코드 리뷰</button></div>
+<div class="actions"><button class="btn primary" onclick="copyOut('dv-out')">📋 이 단계 프롬프트 복사</button></div>
+<div class="prompt" id="dv-out"></div>
+<div class="callout warning">키가 필요한 API의 키를 HTML에 넣으면 누구나 볼 수 있어요. 공개할 서비스라면 키는 서버 쪽에 두는 구조가 필요하고, Canvas에서는 데이터베이스 보안 규칙을 직접 정하기 어렵다는 점도 기획서에서 함께 검토하세요.</div>
+</div></section>
+
+<section class="panel" id="p-finish"><div class="card"><div class="eyebrow">FINAL CHECK</div><h2>마무리 · 교차검증과 공유</h2>
+<p>어떤 트랙이든 마지막은 같아요. AI에게 먼저 문제를 찾게 하고, 확인된 것만 고친 뒤, 직접 다시 눌러 봅니다.</p>
+<div class="actions"><button class="btn primary" onclick="copyOut('fin-out')">📋 최종 검토 프롬프트 복사</button></div>
+<div class="prompt" id="fin-out">지금까지 만든 웹앱의 전체 코드를 검토해 주세요.
+1. 최초 요구사항과 현재 기능을 비교해 주세요.
+2. 기존 기능 누락, 입력값 검사, 등록·수정·삭제 오류를 확인해 주세요.
+3. 숫자 입력에 요청하지 않은 단위 제한(예: 1000원 단위)이 있는지 확인해 주세요.
+4. 사용자 입력이 HTML로 실행되지 않도록 안전하게 표시되는지 확인해 주세요.
+5. 저장 상태, 새로고침, 다른 기기에서의 반영을 점검해 주세요.
+6. 화면에서의 권한 제한과 실제 데이터베이스 보안을 혼동하지 마세요.
+7. 코드만 검토한 부분과 실제 실행 테스트 결과를 구분해 주세요.
+발견한 문제를 중요도순으로 정리하되 아직 코드는 수정하지 마세요.</div>
+<h3>완료 확인</h3>
+<label class="checkline"><input type="checkbox" data-check="fin-0" onchange="mark(this)"> AI의 검토 결과를 읽고 진짜 문제를 골라냈다</label>
+<label class="checkline"><input type="checkbox" data-check="fin-1" onchange="mark(this)"> 필요한 부분만 고치고 다시 눌러 확인했다</label>
+<label class="checkline"><input type="checkbox" data-check="fin-2" onchange="mark(this)"> 내 앱이 누구의 어떤 문제를 푸는지 한 문장으로 말할 수 있다</label>
+<label class="checkline"><input type="checkbox" data-check="fin-3" onchange="mark(this)"> 공유 링크나 화면 캡처를 패들렛에 올렸다</label>
+<div class="actions"><a class="btn primary" href="https://padlet.com/a911640681/2-s025561qv0n25f75hvzt" target="_blank" rel="noopener">💙 패들렛에 내 작품 올리기</a><a class="btn" href="lesson2.html">← 2차시 실습으로</a></div>
+</div></section>
+</div></div>
+<div class="footer">학습용 HTML 교안 · 체크 상태와 내가 쓴 내용은 현재 브라우저에만 저장됩니다.</div></main>
+<div id="toast" style="display:none;position:fixed;bottom:22px;right:22px;background:#253f46;color:white;padding:12px 20px;border-radius:10px;z-index:20"></div>
+<script>
+const KEY='mission2-';
+function store(k,v){try{localStorage.setItem(KEY+k,v)}catch(e){}}
+function load(k){try{return localStorage.getItem(KEY+k)}catch(e){return null}}
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.style.display='block';clearTimeout(window.__t);window.__t=setTimeout(()=>x.style.display='none',1600)}
+function copyRaw(t){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(()=>toast('복사했어요')).catch(()=>fb(t))}else fb(t)}
+function fb(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('복사했어요')}catch(e){toast('직접 선택해 복사하세요')}a.remove()}
+function copyOut(id){copyRaw(document.getElementById(id).textContent)}
+function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='p-'+id));document.querySelectorAll('.navbtn[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===id));window.scrollTo({top:0,behavior:'smooth'});try{history.replaceState(null,'','#'+id)}catch(e){}}
+function mark(el){store(el.dataset.check,el.checked?'1':'0')}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const K=s=>'<span class="k">'+esc(s)+'</span>';
+
+const F1={
+ '상품 등록·온라인 판매':{name:'상품 등록 준비도 진단',topics:'상품 사진, 상세 설명, 가격 비교, 배송 조건, 검색 키워드',types:'바로 등록 가능형 / 조금만 보완형 / 준비부터 차근차근형',quiz:'상품 등록 상식 퀴즈'},
+ '정리수납 강의':{name:'나의 정리 유형 테스트',topics:'옷장, 주방, 서류, 물건 버리기, 정리 시간',types:'쌓아두는 형 / 숨겨두는 형 / 분류하는 형',quiz:'정리수납 상식 퀴즈'},
+ '장소·여행 안내':{name:'나의 여행 스타일 테스트',topics:'일정 짜기, 숙소, 먹거리, 이동 방법, 사진',types:'계획형 탐험가 / 즉흥형 여행자 / 휴식형 여행자',quiz:'우리 지역 명소 퀴즈'},
+ '교육·강의 운영':{name:'나의 학습 스타일 진단',topics:'새 내용 이해, 복습, 질문, 과제, 집중',types:'보고 배우는 형 / 해 보며 배우는 형 / 정리하며 배우는 형',quiz:'오늘 배운 내용 확인 퀴즈'},
+ '아이와 함께 배우기':{name:'즐거운 구구단 퀴즈',topics:'2단, 3단, 5단, 7단, 9단',types:'참 잘했어요 / 조금만 더 / 다시 도전',quiz:'즐거운 구구단 퀴즈'},
+ '취미 소모임':{name:'나의 취미 성향 테스트',topics:'주말 계획, 새로운 경험, 함께하기, 기록, 준비',types:'활동파 / 감성파 / 탐구파',quiz:'우리 동호회 상식 퀴즈'},
+ '직접 입력':{name:'',topics:'',types:'',quiz:''}};
+const F2={
+ '상품 등록·온라인 판매':{name:'오늘의 상점',intro:'좋은 상품을 꼼꼼하게 고르는 작은 가게',list:'상품 등록 일정',fields:[['상품명',1,'글자'],['등록 예정일',1,'날짜'],['판매가',0,'숫자'],['판매 채널',0,'글자'],['준비 상태',0,'선택지'],['메모',0,'글자']]},
+ '정리수납 강의':{name:'정리가 쉬워지는 시간',intro:'생활 속 정리 습관을 함께 만드는 강의',list:'교육 일정',fields:[['강의명',1,'글자'],['날짜',1,'날짜'],['장소',1,'글자'],['대상',0,'글자'],['정원',0,'숫자'],['메모',0,'글자']]},
+ '장소·여행 안내':{name:'우리 동네 추천 장소',intro:'직접 가 보고 고른 장소만 소개해요',list:'추천 장소 목록',fields:[['장소명',1,'글자'],['지역',1,'글자'],['추천 이유',0,'글자'],['주의사항',0,'글자'],['방문 예정일',0,'날짜']]},
+ '교육·강의 운영':{name:'함께 배우는 교실',intro:'쉽고 친절하게 배우는 프로그램',list:'수업 일정',fields:[['수업명',1,'글자'],['날짜',1,'날짜'],['시간',0,'시간'],['장소',1,'글자'],['준비물',0,'글자']]},
+ '아이와 함께 배우기':{name:'우리 집 퀴즈 교실',intro:'엄마 아빠와 함께 푸는 퀴즈',list:'퀴즈 문제',fields:[['문제',1,'글자'],['정답',1,'글자'],['힌트',0,'글자'],['난이도',0,'선택지']]},
+ '취미 소모임':{name:'주말 사진 산책',intro:'한 달에 두 번, 걸으며 찍는 모임',list:'활동 일정',fields:[['날짜',1,'날짜'],['장소',1,'글자'],['활동 내용',1,'글자'],['예상 회비',0,'숫자']]},
+ '직접 입력':{name:'',intro:'',list:'',fields:[['이름',1,'글자']]}};
+
+function fillSelect(id,obj){$(id).innerHTML=Object.keys(obj).map(k=>'<option>'+k+'</option>').join('')}
+const tabState={m1:'1',m2:'1',dv:'1'};
+
+function applyM1Preset(){const p=F1[$('m1-field').value];const quiz=$('m1-type').value==='quiz';$('m1-name').value=quiz?p.quiz:p.name;$('m1-topics').value=p.topics;$('m1-types').value=quiz?'다 맞혔어요 / 거의 다 왔어요 / 다시 도전해요':p.types;renderM1()}
+function m1Types(){const t=$('m1-types').value.split('/').map(s=>s.trim()).filter(Boolean);while(t.length<3)t.push('결과'+(t.length+1));return t.slice(0,3)}
+function renderM1(){
+ const quiz=$('m1-type').value==='quiz',T=m1Types(),qn=$('m1-qn').value,name=$('m1-name').value||'나의 진단 테스트',who=$('m1-who').value,look=$('m1-look').value,topics=$('m1-topics').value||'(AI가 알맞게 정해 주세요)',mine=$('m1-mine').value.trim(),pic=$('m1-pic').value;
+ $('m1-types-hint').textContent=quiz?'퀴즈: 맞힌 개수에 따라 높은 점수 → 첫째 결과, 중간 → 둘째, 낮은 점수 → 셋째 결과':'진단: 1번 보기→첫째 유형, 2번→둘째, 3번→셋째로 점수가 들어가요.';
+ let s='',t=tabState.m1;
+ if(t==='1'){s='Gemini Canvas에서 실행할 웹앱을 만들어 주세요.\n\n앱 이름: '+K(name)+'\n사용 대상: '+K(who)+'\n'+(mine?'만들고 싶은 이유: '+K(mine)+'\n':'')+'\n1. 화면\n- 첫 화면에 앱 이름, 한 줄 설명, 시작 버튼\n'+(pic==='svg'?'- 첫 화면 위쪽에 앱 주제에 어울리는 단순한 그림을 SVG 코드로 직접 그려 주세요 (외부 이미지 주소 사용 금지)\n':'')+'- 디자인: '+K(look)+', 큰 글씨, 둥근 카드와 버튼, 휴대폰에서도 보기 좋게\n\n2. 질문\n- 질문 '+K(qn)+'개, 질문마다 보기 '+(quiz?'3~4':'3')+'개\n- 질문 주제: '+K(topics)+'\n'+(quiz?'- 질문마다 정답 보기는 하나입니다\n':'- 모든 질문에서 1번 보기는 '+K(T[0])+', 2번 보기는 '+K(T[1])+', 3번 보기는 '+K(T[2])+'에 어울리는 내용으로 만들어 주세요\n')+'- 질문은 한 화면에 하나씩, 이전 질문으로 돌아가 답을 바꿀 수 있게\n- 답을 고르지 않으면 다음으로 넘어가지 않게\n\n3. 지켜 주세요\n- HTML, CSS, JavaScript를 하나의 HTML 파일에 작성\n- 외부 라이브러리, 데이터베이스, 로그인, API는 사용하지 마세요\n- 이번 단계에서는 화면과 질문까지만 만들고, 점수 계산과 결과 화면은 만들지 마세요'}
+ if(t==='2'){s=quiz?'현재 만든 '+K(name)+'에 점수 계산 기능을 추가해 주세요.\n기존 질문, 보기, 디자인, 이전 질문으로 돌아가기 기능은 유지해 주세요.\n\n1. 점수 규칙\n- 정답을 고르면 1점, 오답은 0점\n- 최고 점수는 질문 개수('+K(qn)+'점)입니다\n\n2. 계산 방식\n- 질문별 답을 배열에 저장하고, 마지막에 처음부터 다시 계산해 주세요\n- 답을 바꾸면 바뀐 답 기준으로 다시 계산해 주세요\n- 같은 답을 여러 번 눌러도 점수가 중복되지 않게 해 주세요\n\n3. 임시 점수 화면\n- 맞힌 개수와 틀린 문제 번호를 보여 주세요\n- \'답변 수정하기\' 버튼을 넣어 주세요\n\n아직 결과 설명 화면은 만들지 마세요.':'현재 만든 '+K(name)+'에 점수 계산 기능을 추가해 주세요.\n기존 질문, 보기, 디자인, 이전 질문으로 돌아가기 기능은 유지해 주세요.\n\n1. 점수 규칙\n- 1번 보기: '+K(T[0])+' +1점\n- 2번 보기: '+K(T[1])+' +1점\n- 3번 보기: '+K(T[2])+' +1점\n- 모든 질문에 답하면 세 유형 점수의 합은 반드시 '+K(qn)+'점이어야 합니다\n\n2. 계산 방식\n- 질문별 답을 배열에 저장하고, 마지막에 처음부터 다시 계산해 주세요\n- 답을 바꾸면 바뀐 답 기준으로 다시 계산해 주세요\n- 같은 답을 여러 번 눌러도 점수가 중복되지 않게 해 주세요\n\n3. 임시 점수 화면\n- 유형별 점수와 가장 높은 유형을 보여 주세요\n- 가장 높은 점수가 같은 유형이 둘 이상이면 공동 결과로 모두 보여 주세요\n- \'답변 수정하기\' 버튼을 넣어 주세요\n\n아직 결과 설명 화면은 만들지 마세요.'}
+ if(t==='3'){s='현재 만든 '+K(name)+'의 결과 화면을 완성해 주세요.\n점수 규칙과 답변 수정 기능은 바꾸지 마세요.\n\n1. 결과\n'+(quiz?'- 점수 구간별 결과 3가지: 높은 점수 '+K(T[0])+' / 중간 '+K(T[1])+' / 낮은 점수 '+K(T[2])+'\n- 틀린 문제는 정답과 짧은 설명을 함께 보여 주세요\n':'- 결과 유형 3가지: '+K(T.join(' / '))+'\n- 유형마다 아이콘, 한 문장 설명, 도움이 되는 팁 2~3가지\n- 가장 높은 점수가 같으면 해당 유형을 모두 보여 주세요\n')+'- 결과 아래에 점수를 작게 남겨 주세요\n\n2. 버튼\n- \'다시 시작하기\': 답과 점수를 모두 지우고 첫 질문부터\n- \'답변 수정하기\': 마지막 질문으로 돌아가 기존 답 유지\n\n3. 지켜 주세요\n- 진단이나 판정처럼 단정하는 표현보다 가벼운 안내로 써 주세요\n- 완성 후 제가 직접 눌러서 확인해야 할 항목을 알려 주세요. 실제로 실행하지 않은 테스트는 실행했다고 말하지 마세요'}
+ if(t==='4'){s='현재 완성한 '+K(name)+'을 최종 점검하고 디자인을 소폭 개선해 주세요.\n새로운 기능을 추가하거나 기존 기능을 다시 설계하지 마세요.\n\n1. 디자인: 지금 색과 분위기('+K(look)+')를 유지하면서 글씨와 버튼 크기를 통일하고, 휴대폰에서 겹치지 않게 해 주세요\n2. 기능 점검: 질문 이동, 답변 수정, 점수 계산'+(quiz?'':', 동점 결과')+', 다시 시작하기가 모두 유지되는지 확인해 주세요\n3. 실제 오류가 확인된 부분만 최소한으로 고쳐 주세요\n4. 제가 직접 확인해야 하는 항목과 이미 코드로 확인한 항목을 구분해 알려 주세요\n\n완성 후 내보내기로 HTML 파일을 내려받아 보관하겠습니다.'}
+ $('m1-out').innerHTML=s}
+
+function fieldRows(){return [...document.querySelectorAll('#m2-fields .frow')].map(r=>({on:r.querySelector('.on').checked,name:r.querySelector('.nm').value.trim(),req:r.querySelector('.rq').checked,type:r.querySelector('.ty').value})).filter(f=>f.on&&f.name)}
+function rowHTML(f){return '<div class="frow"><input type="checkbox" class="on" checked><input type="text" class="nm" value="'+esc(f[0])+'"><label><input type="checkbox" class="rq" '+(f[1]?'checked':'')+'>필수</label><select class="ty">'+['글자','숫자','날짜','시간','선택지'].map(x=>'<option'+(x===f[2]?' selected':'')+'>'+x+'</option>').join('')+'</select><button class="del" title="삭제" onclick="this.parentNode.remove();renderM2()">✕</button></div>'}
+function applyM2Preset(){const p=F2[$('m2-field').value];$('m2-name').value=p.name;$('m2-intro').value=p.intro;$('m2-list').value=p.list;$('m2-fields').innerHTML=p.fields.map(rowHTML).join('');renderM2()}
+function addField(){const n=$('m2-newf').value.trim();if(!n)return;$('m2-fields').insertAdjacentHTML('beforeend',rowHTML([n,0,'글자']));$('m2-newf').value='';renderM2()}
+function fieldLines(fs){return fs.map(f=>'- '+K(f.name)+' ('+(f.req?'필수':'선택')+(f.type==='숫자'?', 숫자 · 0 이상의 모든 정수 · 1000 단위 같은 제한은 넣지 마세요':f.type==='선택지'?', 선택지에서 고르기':', '+f.type)+')').join('\n')}
+function renderM2(){
+ const fs=fieldRows(),name=$('m2-name').value||'나의 서비스',intro=$('m2-intro').value||'(AI가 알맞게 정해 주세요)',list=$('m2-list').value||'목록',save=$('m2-save').value,pic=$('m2-pic').value,look=$('m2-look').value,mine=$('m2-mine').value.trim(),fromFile=$('m2-start').value==='file';
+ const req=fs.filter(f=>f.req).map(f=>f.name);const sortKey=(fs.find(f=>f.type==='날짜')||{}).name;
+ $('m2-savewarn').style.display=save==='shared'?'block':'none';
+ const keep=fromFile?'성향 테스트와 메뉴 구조, 기존에 정상 작동하는 기능은 유지해 주세요.':'기존에 정상 작동하는 기능은 유지해 주세요.';
+ let s='',t=tabState.m2;
+ if(t==='1'){s=(fromFile?'첨부한 HTML은 2차시에 만든 \'우리 모임 운영 서비스\'입니다. Canvas로 열어 주세요.\n이 앱의 구조를 빌려 내 분야에 맞는 앱으로 바꾸려고 합니다.\n\n먼저 코드는 수정하지 말고, 아래를 바꾸려면 어디를 고쳐야 하는지만 설명해 주세요.\n- 모임 소개 → '+K(name)+' 소개\n- 모임 일정 → '+K(list)+'\n- 입력 항목을 아래 항목으로 교체\n'+fieldLines(fs)+'\n\n설명을 확인한 뒤 다음 요청에서 소개 화면부터 바꾸겠습니다.':'Gemini Canvas에서 실행할 웹앱을 만들어 주세요.\n\n서비스 이름: '+K(name)+'\n한 줄 소개: '+K(intro)+'\n'+(mine?'만들고 싶은 이유: '+K(mine)+'\n':'')+'\n1. 이번 단계: 소개 화면만\n- 위에서부터 서비스 이름, 한 줄 소개, 핵심 특징 3가지 카드\n'+(pic==='svg'?'- 맨 위에 주제에 어울리는 단순한 그림을 SVG 코드로 직접 그려 주세요 (외부 이미지 주소 금지)\n':pic==='imgbb'?'- 맨 위에 대표 사진 자리를 만들어 주세요 (사진 주소는 다음에 드릴게요)\n':'')+'- 그 아래 \''+K(list)+'\' 영역을 만들고 지금은 "아직 등록된 항목이 없어요"만 표시\n- 디자인: '+K(look==='keep'?'차분하고 읽기 쉬운 색':look)+', 큰 글씨, 둥근 카드, 휴대폰에서도 보기 좋게\n\n2. 지켜 주세요\n- HTML, CSS, JavaScript를 하나의 HTML 파일에 작성\n- 이번에는 입력 폼, 수정·삭제, 저장 기능을 만들지 마세요')}
+ if(t==='2'){s=(fromFile?'이제 소개 화면을 바꿔 주세요.\n- 모임 소개를 '+K(name)+' 소개로 바꾸고 한 줄 소개는 '+K(intro)+'\n'+(pic!=='none'?'- 대표 이미지는 '+(pic==='svg'?'주제에 어울리는 SVG 그림으로 다시 그려 주세요\n':'기존 자리를 유지하고 사진 주소는 따로 드릴게요\n'):'')+(look!=='keep'?'- 디자인을 '+K(look)+' 분위기로 바꿔 주세요\n':'')+'\n그다음 ':'')+'\''+K(list)+'\' 영역에 입력 폼과 목록을 '+(fromFile?'기존 일정 대신 ':'')+'만들어 주세요.\n\n1. 입력 항목\n'+fieldLines(fs)+'\n- \'등록\' 버튼\n\n2. 입력 검사\n- 필수 항목('+K(req.join(', ')||'없음')+')이 비어 있으면 등록하지 말고 어떤 칸이 비었는지 알려 주세요\n- 숫자 항목에 숫자가 아닌 값이나 음수가 들어오면 안내해 주세요\n\n3. 목록\n- 등록한 항목은 카드로 보여 주세요\n'+(sortKey?'- '+K(sortKey)+'이 빠른 순서로 정렬해 주세요\n':'')+'- 항목마다 고유 번호(id)를 붙여 관리해 주세요\n- 항목이 없으면 "아직 등록된 항목이 없어요"를 보여 주세요\n\n4. 지켜 주세요\n- 이번 단계에서는 저장 기능을 만들지 마세요. 새로고침하면 사라지는 것이 정상입니다\n- 수정·삭제는 다음 단계에서 추가합니다\n- '+keep}
+ if(t==='3'){s='현재 \''+K(list)+'\' 목록에 수정과 삭제 기능을 추가해 주세요.\n\n1. 수정\n- 카드마다 \'수정\' 버튼, 누르면 기존 정보가 입력 폼에 나타나게\n- \'등록\' 버튼을 \'수정 완료\'로 바꾸고, 저장하면 해당 항목만 변경\n- \'취소\'를 누르면 수정하지 않고 입력 폼 초기화\n\n2. 삭제\n- 카드마다 \'삭제\' 버튼, 삭제 전 확인창, 확인하면 해당 항목만 삭제\n\n3. 지켜 주세요\n- 고유 ID를 기준으로 정확한 항목만 수정·삭제\n- 기존 입력 검사'+(sortKey?'와 정렬':'')+'을 유지\n- 저장 기능은 아직 추가하지 마세요\n- '+keep}
+ if(t==='4'){s=save==='none'?'이번 앱은 저장 없이 사용합니다. 이 단계는 건너뛰고 5단계로 가세요.\n(새로고침하면 목록이 사라지는 것이 정상입니다)':'현재 \''+K(list)+'\' 데이터를 새로고침하거나 다시 접속해도 유지되도록 저장 기능을 추가해 주세요.\n\n1. 제미나이 캔버스에서 사용할 수 있는 데이터베이스 저장 기능을 활용해 주세요.\n2. 등록, 수정, 삭제 결과가 데이터베이스에 반영되게 해 주세요.\n3. 페이지를 다시 열면 저장된 목록을 불러와 보여 주세요.\n'+(save==='shared'?'4. 공유 링크로 다른 기기에서 열었을 때도 같은 목록이 보이고, 변경이 새로고침 없이 반영되게 해 주세요.\n':'4. 이 앱을 쓰는 사람마다 자기 목록만 보이게 하고, 다른 사람과 공유하지 마세요.\n')+'5. 저장 중이거나 저장에 실패했을 때 상태를 알려 주세요.\n6. 기존 화면, 입력 검사, 수정·삭제 기능은 유지해 주세요.\n\n데이터베이스 연결이 지원되지 않는다면 저장된 것처럼 표시하지 말고 가능한 방법을 설명해 주세요.'}
+ if(t==='5'){s='먼저 아래를 고쳐 주세요.\n사용자가 입력한 내용은 HTML 코드로 해석되지 않고 일반 텍스트로 표시되도록 안전하게 처리해 주세요. 기존 기능과 디자인은 유지해 주세요.\n\n그다음 전체 코드를 검토해 주세요. (이 부분은 수정 후 따로 보내도 됩니다)\n1. 처음 요구사항('+K(name)+', '+K(list)+', 입력 항목)과 현재 기능 비교\n2. 필수 입력 검사, 숫자 항목의 0 이상 모든 정수 허용 여부\n3. 등록·수정·삭제가 고유 ID 기준으로 정확한지\n4. 저장·새로고침·다른 기기 반영 상태\n5. 휴대폰 화면\n발견한 문제를 중요도순으로 정리하고, 코드만 본 것과 실제 실행 결과를 구분해 주세요. 아직 코드는 수정하지 마세요.'}
+ $('m2-out').innerHTML=s}
+
+function renderMeta(){
+ const f=$('mt-field').value.trim()||'[직업이나 관심사 입력]',b=$('mt-base').value,idea=$('mt-idea').value.trim();
+ const base=b==='1'?'1차시에 만든 \'질문 → 점수 → 결과\' 성향 테스트 구조를 바탕으로':b==='2'?'2차시에 만든 \'소개 + 목록 등록·수정·삭제·저장\' 구조를 바탕으로':'형식에 얽매이지 않고';
+ $('mt-out').innerHTML='나는 제미나이 캔버스로 나만의 웹앱을 만들고 싶어요.\n나의 직업 또는 관심 분야는 '+K(f)+'입니다.\n'+(idea?'지금 떠오르는 아이디어: '+K(idea)+'\n':'')+'\n당신은 웹앱 기획 전문가입니다.\n'+base+' 함께 기획해 주세요.\n\n1. 내가 실제로 해결하고 싶은 문제를 질문으로 파악해 주세요.\n2. 질문은 한 번에 하나씩 해 주세요. 내가 답하기 어려워하면 고를 수 있는 예시를 3~5개 보여 주세요.\n3. 답변을 바탕으로 만들 수 있는 간단한 웹앱 3개를 추천해 주세요.\n4. 내가 하나를 고르면 필요한 입력, 처리, 출력 기능을 정리해 주세요.\n5. 제미나이 캔버스에서 제작할 수 있는 단계별 프롬프트를 작성해 주세요. 한 단계에 한 기능만 넣어 주세요.\n6. 각 단계마다 직접 확인할 테스트 항목도 작성해 주세요.\n\n아직 코드를 만들지 말고 기획부터 진행해 주세요.';
+ const u=$('rv-use').value.trim()||'[내 분야에 어떻게 쓰고 싶은지]';
+ $('rv-out').innerHTML='첨부한 웹앱 또는 화면을 분석해 주세요.\n\n1. 화면 구성과 디자인 특징(색, 글꼴, 배치, 카드와 간격)을 설명해 주세요.\n2. 입력, 처리, 출력 기능을 구분해 주세요.\n3. 화면만으로 확인할 수 없는 기능은 추측하지 말고 따로 표시해 주세요.\n4. 이 구조를 이렇게 쓰고 싶어요: '+K(u)+'\n   적용하는 방법을 제안해 주세요.\n5. 제미나이 캔버스에서 쓸 단계별 제작 프롬프트와 확인 체크리스트를 작성해 주세요.\n6. 원본의 로고, 사진, 문구는 그대로 복제하지 말고 디자인 원칙만 참고해 주세요.\n\n아직 코드를 만들지 마세요.'}
+
+function renderDev(){
+ const v=id=>$(id).value.trim(),name=v('dv-name')||'[작품 이름]',feats=v('dv-feat').split('\n').map(s=>s.trim()).filter(Boolean);let s='',t=tabState.dv;
+ const ctx='작품 이름: '+K(name)+'\n주 사용자: '+K(v('dv-user')||'[사용자]')+'\n해결하려는 문제: '+K(v('dv-problem')||'[문제]')+'\n핵심 기능:\n'+(feats.length?feats.map((f,i)=>'  '+(i+1)+'. '+K(f)).join('\n'):'  '+K('[기능]'))+'\n다룰 데이터: '+K(v('dv-data')||'[데이터 항목]')+'\n실행 환경: '+K($('dv-env').value)+'\n데이터 저장: '+K($('dv-db').value)+'\n외부 연동: '+K($('dv-api').value)+'\n원하는 수준: '+K($('dv-level').value)+'\n완료 기준: '+K(v('dv-done')||'[완료 기준]');
+ if(t==='1')s='아래 작품의 요구사항 문서(PRD)를 작성해 주세요. 코드는 아직 작성하지 마세요.\n\n'+ctx+'\n\n문서에 포함할 것\n1. 목적과 사용자 시나리오 (대표 흐름 2~3개)\n2. 기능 목록과 우선순위 (반드시 / 있으면 좋음 / 나중에)\n3. 데이터 모델: 항목별 이름, 타입, 필수 여부, 제약(숫자 범위 등)\n4. 화면 목록과 화면 간 이동\n5. 실패 상황과 처리 방법 (빈 입력, 잘못된 값, 저장 실패, 연결 실패)\n6. 보안과 개인정보 검토: 키 노출, 사용자 입력의 안전한 표시, 데이터 공개 범위, 권한(누가 수정·삭제할 수 있나)\n7. 선택한 실행 환경의 제약과 대안 (예: Canvas에서는 데이터베이스 보안 규칙을 직접 정하기 어려움)\n8. 완료 기준을 확인할 테스트 항목\n\n제가 확인할 수 있게 확정된 내용과 가정한 내용을 구분해 주세요.';
+ if(t==='2')s='방금 작성한 요구사항 문서를 기준으로 구현 계획을 세워 주세요. 코드는 아직 작성하지 마세요.\n\n1. 한 단계에 한 기능만 들어가도록 단계를 나눠 주세요 (5~8단계)\n2. 단계마다: 만들 기능 / 건드리면 안 되는 기존 기능 / 완료 조건 / 직접 해 볼 테스트 입력값\n3. 데이터 구조를 처음에 확정하고 이후 단계에서 바꾸지 않도록 설계해 주세요\n4. 각 단계를 '+K($('dv-env').value)+'에 그대로 붙여넣을 수 있는 요청문으로도 정리해 주세요\n5. 위험한 단계(저장 구조 변경, 외부 연동, 디자인 전면 변경)는 따로 표시하고 되돌리는 방법을 적어 주세요';
+ if(t==='3')s='구현 계획의 [  ]단계를 진행해 주세요.\n\n- 이번 단계 기능만 추가하고, 다른 기능과 데이터 구조는 바꾸지 마세요\n- 요구하지 않은 제한(예: 숫자 1000 단위, 글자 수 제한)은 넣지 마세요\n- 사용자 입력은 화면에 표시할 때 일반 텍스트로 처리해 주세요\n- 변경한 부분을 요약하고, 제가 직접 확인할 테스트 입력값과 기대 결과를 표로 알려 주세요\n- 실제로 실행하지 않은 테스트는 통과했다고 말하지 마세요';
+ if(t==='4')s='현재 코드를 리뷰해 주세요. 아직 코드는 수정하지 마세요.\n\n'+ctx+'\n\n확인할 것\n1. 요구사항 문서와 실제 구현의 차이 (빠진 기능, 요청하지 않은 기능)\n2. 구조: 중복 코드, 상태 관리, 함수 분리, 이름 짓기\n3. 입력 검증과 예외 처리 (빈 값, 경계값, 잘못된 형식)\n4. 보안: 사용자 입력 표시 방식(innerHTML), 키 노출, 데이터 공개 범위, 화면 제한과 실제 권한의 차이\n5. 저장·동기화: 실패 처리, 데이터 경로, 동시에 수정할 때 생길 수 있는 문제\n6. 휴대폰 화면과 접근성\n\n문제를 중요도(높음·중간·낮음)순 표로 정리하고, 각 문제의 수정 요청문을 함께 써 주세요. 코드만 보고 판단한 것과 실행해서 확인해야 하는 것을 구분해 주세요.';
+ $('dv-out').innerHTML=s}
+
+function renderAll(){renderM1();renderM2();renderMeta();renderDev()}
+document.addEventListener('DOMContentLoaded',()=>{
+ fillSelect('m1-field',F1);fillSelect('m2-field',F2);
+ document.querySelectorAll('[data-check]').forEach(x=>x.checked=load(x.dataset.check)==='1');
+ document.querySelectorAll('[data-save]').forEach(t=>{t.value=load(t.dataset.save)||'';t.addEventListener('input',()=>store(t.dataset.save,t.value))});
+ $('m1-field').addEventListener('change',applyM1Preset);$('m1-type').addEventListener('change',applyM1Preset);
+ ['m1-name','m1-who','m1-qn','m1-look','m1-topics','m1-types','m1-pic','m1-mine'].forEach(id=>{$(id).addEventListener('input',renderM1);$(id).addEventListener('change',renderM1)});
+ $('m2-field').addEventListener('change',applyM2Preset);
+ ['m2-start','m2-name','m2-intro','m2-list','m2-save','m2-pic','m2-look','m2-mine'].forEach(id=>{$(id).addEventListener('input',renderM2);$(id).addEventListener('change',renderM2)});
+ $('m2-fields').addEventListener('input',renderM2);$('m2-fields').addEventListener('change',renderM2);
+ ['mt-field','mt-base','mt-idea','rv-use'].forEach(id=>{$(id).addEventListener('input',renderMeta);$(id).addEventListener('change',renderMeta)});
+ ['dv-name','dv-user','dv-env','dv-db','dv-api','dv-level','dv-problem','dv-feat','dv-data','dv-done'].forEach(id=>{$(id).addEventListener('input',renderDev);$(id).addEventListener('change',renderDev)});
+ document.querySelectorAll('[data-tabs]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;g.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));tabState[g.dataset.tabs]=b.dataset.t;renderAll()}));
+ applyM1Preset();applyM2Preset();renderAll();
+ const h=(location.hash||'').slice(1);show(document.getElementById('p-'+h)?h:'start')});
+</script></body></html>
